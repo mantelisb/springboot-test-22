@@ -41,3 +41,20 @@ war {
 		)
 	}
 }
+
+
+task stage() {
+	dependsOn clean, war
+}
+war.mustRunAfter clean
+
+task copyToLib(type: Copy) {
+	into "$buildDir/server"
+	from(configurations.compile) {
+		include "webapp-runner*"
+	}
+}
+
+stage.dependsOn(copyToLib)
+
+logger.lifecycle "war.archivePath = $war.archivePath"
