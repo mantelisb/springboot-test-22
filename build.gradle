@@ -26,10 +26,6 @@ test {
 	useJUnitPlatform()
 }
 
-jar {
-	manifest {
-		attributes(
-				'Main-Class': 'src.main.java.com.example.MySpringbootDemoEmptyApplication'
-		)
-	}
+springBoot {
+	mainClass='com.example.demo.SpringbootDemoEmptyApplication'
 }
