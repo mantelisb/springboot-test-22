@@ -2,7 +2,10 @@ plugins {
 	id 'org.springframework.boot' version '2.6.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'war'
 }
+
+apply plugin: "war"
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -28,4 +31,13 @@ test {
 
 springBoot {
 	mainClass='com.example.demo.SpringbootDemoEmptyApplication'
+}
+
+war {
+	enabled=true
+	manifest {
+		attributes(
+				'Main-Class': 'com.example.demo.SpringbootDemoEmptyApplication'
+		)
+	}
 }
