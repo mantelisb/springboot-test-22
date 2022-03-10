@@ -29,7 +29,7 @@ test {
 jar {
 	manifest {
 		attributes(
-				'Main-Class': 'demo.MySpringbootDemoEmptyApplication'
+				'Main-Class': 'src.main.java.com.example.MySpringbootDemoEmptyApplication'
 		)
 	}
 }
